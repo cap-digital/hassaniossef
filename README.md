@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hassan de Zé Cocá · 11122
 
-## Getting Started
+Landing page de dobra única do candidato a Deputado Estadual pela Bahia (Eleições 2026).
+Feita em Next.js 14 (App Router) + Tailwind CSS. Serve como site oficial para vinculação
+e verificação de anunciante político no Meta Ads.
 
-First, run the development server:
+## Rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variáveis de ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copie `.env.example` para `.env.local` (ou configure no painel da Vercel):
 
-## Learn More
+| Variável | Uso |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | URL pública do site. Alimenta canonical, Open Graph e JSON-LD. |
+| `NEXT_PUBLIC_META_DOMAIN_VERIFICATION` | Código de verificação de domínio do Meta Business. Gera a tag `facebook-domain-verification` no `<head>`. |
 
-To learn more about Next.js, take a look at the following resources:
+## Verificação de domínio no Meta
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Meta Business Suite → Configurações → Segurança da marca → Domínios → Adicionar.
+2. Escolha "Verificação por meta tag" e copie o código `content="..."`.
+3. Defina `NEXT_PUBLIC_META_DOMAIN_VERIFICATION` com esse código e faça o deploy.
+4. Volte ao Meta e clique em "Verificar domínio".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura
 
-## Deploy on Vercel
+- `app/page.tsx` — a landing (cabeçalho, hero, rodapé).
+- `app/layout.tsx` — fonte Montserrat, metadata, Open Graph, JSON-LD.
+- `public/candidato.jpg` — foto do candidato otimizada (original em `assets/`).
+- `public/og.jpg` — imagem de compartilhamento 1200×630.
+- `app/icon.png`, `app/apple-icon.png`, `app/favicon.ico` — ícones.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeto pronto para Vercel: `vercel` ou conecte o repositório. Configure as variáveis acima.

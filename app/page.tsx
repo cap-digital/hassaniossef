@@ -112,8 +112,8 @@ function Backdrop() {
       </div>
       <Squiggle className="absolute -left-6 top-24 h-20 w-40 -rotate-12 text-brand-lime opacity-90 sm:top-28 lg:h-24 lg:w-48" />
       <Squiggle className="absolute -left-3 top-28 h-20 w-40 -rotate-12 text-brand-pink opacity-80 sm:top-32 lg:h-24 lg:w-48" />
-      <Squiggle className="absolute -right-6 bottom-28 h-16 w-32 rotate-[14deg] text-brand-pink opacity-80 lg:bottom-32 lg:h-20 lg:w-40" />
-      <Squiggle className="absolute -right-3 bottom-32 h-16 w-32 rotate-[14deg] text-brand-lime opacity-90 lg:bottom-36 lg:h-20 lg:w-40" />
+      <Squiggle className="absolute -right-6 bottom-28 hidden h-16 w-32 rotate-[14deg] text-brand-pink opacity-80 lg:block lg:bottom-32 lg:h-20 lg:w-40" />
+      <Squiggle className="absolute -right-3 bottom-32 hidden h-16 w-32 rotate-[14deg] text-brand-lime opacity-90 lg:block lg:bottom-36 lg:h-20 lg:w-40" />
     </div>
   );
 }
